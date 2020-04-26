@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap");
+
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #363636;
+  color: white;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+.strength-meter {
+  position: relative;
+  height: 1rem;
+  width: 90%;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.strength-meter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: calc(1% * var(--strength, 0));
+  background-color: rgb(47, 153, 47);
+  overflow: hidden;
+  transition: width 200ms;
+}
+
+.password-input {
+  margin-top: 1rem;
+  width: 90%;
+  padding: 0.8rem 0.75rem;
+  background: #d3d3d3;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  color: #363636;
+}
+
+.password-input:focus {
+  border-color: #474747;
+}
+
+.reasons > * {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  color: #ec2049;
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .password-input {
+    font-size: 1rem;
+  }
+
+  .reasons > * {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .password-input {
+    font-size: 0.7rem;
+  }
+  .reasons > * {
+    font-size: 1rem;
+  }
+}
